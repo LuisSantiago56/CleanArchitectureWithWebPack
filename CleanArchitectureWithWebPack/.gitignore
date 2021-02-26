@@ -1,2 +1,5 @@
-﻿body {
-}
+﻿[Bb]in/
+[Oo]bj/
+.vs/
+node_modules/
+**/wwwroot/App*

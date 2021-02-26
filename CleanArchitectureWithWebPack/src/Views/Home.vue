@@ -1,10 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+﻿<template>
+    <b-container class="mt-2">
+        <h1>Home vue</h1>
+    </b-container>
+</template>
 
-</body>
-</html>
+<script>
+    export default {
+        data() {
+            return {
+
+            };
+        },
+    };
+</script>
+
+<style>
+
+</style>

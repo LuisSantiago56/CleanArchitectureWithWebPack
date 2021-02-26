@@ -1,8 +1,38 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = null;
 }
+@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@using System.Text.Encodings.Web;
+@inject JavaScriptEncoder encoder;
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@{}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Continuum - WIINS</title>
+    <script type="text/javascript">
+            window.AppData = Object.freeze({
+                @*username: "@encoder.Encode(User.Identity.Name)",*@
+                username: "Hello World",
+
+            })
+            window.Nav = Object.freeze({
+                Urls: {
+                    GetHomeData: "@Url.Action("GetHomeData", "Home")/",
+                },
+            })
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-vue/dist/bootstrap-vue.css" />
+    <link rel="stylesheet" href="https://unpkg.com/vue-multiselect/dist/vue-multiselect.min.css" />
+</head>
+<body>
+    <div id="app"></div>
+    <environment names="Development">
+        <script src="App_hmr.js" type="text/javascript"></script>
+    </environment><environment names="Production">
+        <script src="App.js" type="text/javascript"></script>
+    </environment>
+</body>
+</html>
