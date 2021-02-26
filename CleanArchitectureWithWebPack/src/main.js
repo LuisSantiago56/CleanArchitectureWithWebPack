@@ -20,7 +20,7 @@ import axios from 'axios';
 windos.axios = axios;
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-axios.defaults.transformRequest = [function (data.headers)]{
+axios.defaults.transformRequest = [function (data, headers){
     if ("Content-Type" in headers) {
         return data
     }
